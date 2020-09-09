@@ -1,7 +1,23 @@
 <div class="row">
     <p>Name:{{y.name}}</p>
     <p>Email:{{y.email}}</p>
-    <p>Address:{{y.address}}</p>
-    <p>company name:{{y.company}}</p>
-    <p>company details:{{y.details}}</p>
+    <div *ngFor="let x of data">
+        <p>Flat No:{{x.flat}}</p>
+    <p>company name:{{x.comName}}</p>
+    <p>Details:{{x.comDetails}}</p>
+    <p>Society:{{x.society}}</p>
+    <p>Landmark:{{x.landmark}}</p>
+    <p>area:{{x.area}}</p>
+    <p>State:{{x.state}}</p>
+    <p>Pincode:{{x.pincode}}</p>
+    <hr>    
+</div>
+    
+</div>
+<div class="row">
+    <button (click)="xyz()" [disabled]="krish">Take another address</button>
+    <p *ngIf="krish" style="color:red;">Not allowed now!</p>
+</div>
+<div class="row">
+    <button (click)="clear()">clear items</button>
 </div>

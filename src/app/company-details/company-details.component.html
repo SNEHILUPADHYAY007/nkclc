@@ -1,11 +1,80 @@
-<div class="row">
-    <label for="name">Company name</label>
-    <input type="text" placeholder="company name" [(ngModel)]="comName">
-</div>
-<div class="row">
-    <label for="details">Details</label>
-    <input type="text" placeholder="company details" [(ngModel)]="comDetails">
-</div>
-<div class="row">
-    <button (click)="check()">submit</button>
-</div>
+<form [formGroup]="company" (ngSubmit)="submit()">
+    <div class="row">
+        <label for="flatno">Flatno</label>
+        <input type="number" min="0" formControlName="flat">
+        <div *ngFor="let error of errorMsg.flat">
+            <ng-container *ngIf="third.hasError(error.type) && (third.dirty || third.touched)">
+                <label class="text-danger">{{error.message}}</label>
+            </ng-container>
+        </div>
+    </div>
+    <div class="row">
+        <label for="society">Society</label>
+        <input type="text"  formControlName="society">
+        <div *ngFor="let error of errorMsg.society">
+            <ng-container *ngIf="fourth.hasError(error.type) && (fourth.dirty || fourth.touched)">
+                <label class="text-danger">{{error.message}}</label>
+            </ng-container>
+        </div>
+    </div>
+    <div class="row">
+        <label for="landmark">Landmark</label>
+        <input type="text"  formControlName="landmark">
+        <div *ngFor="let error of errorMsg.landmark">
+            <ng-container *ngIf="fifth.hasError(error.type) && (fifth.dirty || fifth.touched)">
+                <label class="text-danger">{{error.message}}</label>
+            </ng-container>
+        </div>
+    </div>
+    <div class="row">
+        <label for="area">Area</label>
+        <input type="text"  formControlName="area">
+        <div *ngFor="let error of errorMsg.area">
+            <ng-container *ngIf="sixth.hasError(error.type) && (sixth.dirty || sixth.touched)">
+                <label class="text-danger">{{error.message}}</label>
+            </ng-container>
+        </div>
+    </div>
+    <div class="row">
+        <label for="state">State</label>
+        <input type="text"  formControlName="state">
+        <div *ngFor="let error of errorMsg.state">
+            <ng-container *ngIf="seven.hasError(error.type) && (seven.dirty || seven.touched)">
+                <label class="text-danger">{{error.message}}</label>
+            </ng-container>
+        </div>
+    </div>
+    <div class="row">
+        <label for="pincode">Pincode</label>
+        <input type="text"  formControlName="pincode">
+        <div *ngFor="let error of errorMsg.pincode">
+            <ng-container *ngIf="eight.hasError(error.type) && (eight.dirty || eight.touched)">
+                <label class="text-danger">{{error.message}}</label>
+            </ng-container>
+        </div>
+    </div>
+    <div class="row">
+        <label for="name">Company name</label>
+        <input type="text" formControlName="comName" >
+        <div *ngFor="let error of errorMsg.name">
+            <ng-container *ngIf="first.hasError(error.type) && (first.dirty || first.touched)">
+                <label class="text-danger">{{error.message}}</label>
+            </ng-container>
+        </div>
+    </div>
+    <div class="row">
+        <label for="details">Details</label>
+        <input type="text" formControlName="comDetails" >
+        <div *ngFor="let error of errorMsg.details">
+            <ng-container *ngIf="second.hasError(error.type) && (second.dirty || second.touched)">
+                <label class="text-danger">{{error.message}}</label>
+            </ng-container>
+        </div>
+    </div>
+    <div class="row">
+        <button (click)="check()" [disabled]="!company.valid">submit</button>
+    </div>
+    
+</form>
+
+
