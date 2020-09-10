@@ -1,0 +1,38 @@
+<form [formGroup]="product1" (ngSubmit)="submit()">
+    <div class="row">
+        <label for="product">Product name</label>
+        <input type="text" formControlName="product">
+        <div *ngFor="let error of error12.product">
+        <ng-container *ngIf="first1.hasError(error.type) && (first1.dirty || first1.touched)">
+            <label class="text-danger">{{error.message}}</label>
+        </ng-container>
+        </div>
+    </div>
+    <div class="row">
+        <label for="specification">Product specification</label>
+        <input type="text" formControlName="specification">
+        <div *ngFor="let error of error12.specification">
+            <ng-container *ngIf="second1.hasError(error.type) && (second1.dirty || second1.touched)">
+                <label class="text-danger">{{error.message}}</label>
+            </ng-container>
+        </div>
+    </div>
+    <div style='height: 0px;width:0px; overflow:hidden;'>
+        <input formControlName="imageinformation" value="upload" id="upfile_new" type="file" class="form-control" multiple="" (change)="onFileChange($event)">
+    </div>
+    <button [disabled]="!product1.valid">Submit</button>
+</form>
+<div>
+    <button (click)="getFile()">upload data</button>
+    <div *ngFor="let x of images; let i=index" >
+        <div *ngIf="x.length===0">Nhi he image</div>
+        <div *ngIf="x.length>0">
+            <img src="{{x}}" alt="" style="height:100px;width:100px;">
+            
+        </div>
+
+    </div>    
+</div>
+
+
+

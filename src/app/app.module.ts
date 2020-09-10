@@ -10,6 +10,7 @@ import { DetailsComponent } from './details/details.component';
 import { CompanyDetailsComponent } from './company-details/company-details.component';
 import { StorageServiceModule } from 'ngx-webstorage-service';
 import { LocalStorageService } from './localStorage.service';
+import { ProductComponent } from './product/product.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { LocalStorageService } from './localStorage.service';
     AddressComponent,
     NameComponent,
     DetailsComponent,
-    CompanyDetailsComponent
+    CompanyDetailsComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,FormsModule,AppRoutingModule,ReactiveFormsModule,StorageServiceModule

@@ -5,6 +5,7 @@ import { AddressComponent } from './address/address.component';
 import { NameComponent } from './name/name.component';
 import { DetailsComponent } from './details/details.component';
 import { CompanyDetailsComponent } from './company-details/company-details.component';
+import { ProductComponent } from './product/product.component';
 
 const routes:Routes=[
     {
@@ -23,6 +24,10 @@ const routes:Routes=[
     {
         path:'company',
         component:CompanyDetailsComponent
+    },
+    {
+        path:'product',
+        component:ProductComponent
     }
 ]
 

@@ -1,0 +1,21 @@
+.row{
+    margin:0 auto;
+}
+
+.input-field{
+    border:1px solid red;
+    background: none;
+    padding:5px;
+    
+}
+
+.text-align{
+    text-align: center;
+}
+.width{
+    width:50%;
+}
+
+.text-danger{
+    color:red;
+}
